@@ -6,13 +6,13 @@ import os
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
-os.chdir("C:\\Users\\anass\\Desktop\\linkedin")
+path_desktop = os.environ['USERPROFILE']
 
 def connection(link):
     browser = webdriver.Chrome()
     browser.get(link)
     try:
-        file = open('config.txt')
+        file = open(path_desktop+'\Desktop\WSP\config.txt')
         lines = file.readlines()
         username = lines[0]
         password = lines[1]
