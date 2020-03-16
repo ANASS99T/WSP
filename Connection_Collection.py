@@ -11,15 +11,15 @@ path_desktop = os.environ['USERPROFILE']
 def connection(link):
     browser = webdriver.Chrome()
     browser.get(link)
-    try:
-        file = open(path_desktop+'\Desktop\WSP\config.txt')
-        lines = file.readlines()
-        username = lines[0]
-        password = lines[1]
-    except NameError:
-        print("config.txt is not define")
-    except IndexError:
-        print("username or password is not found")
+    with open(path_desktop+'\Desktop\WSP\config.txt') as file:
+        try:
+            lines = file.readlines()
+            username = lines[0]
+            password = lines[1]
+        except NameError:
+            print("config.txt is not define")
+        except IndexError:
+            print("username or password is not found")
         
     elementID = browser.find_element_by_id('username')
     elementID.send_keys(username)
@@ -28,7 +28,6 @@ def connection(link):
     elementID.send_keys(password)
 
     elementID.submit()
-
     return browser
 
 def collection(browser):
