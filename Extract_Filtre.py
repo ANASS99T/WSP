@@ -3,14 +3,18 @@ import requests
 import time
 import random
 import os
+
+import json
+import pandas as pd
+
 from Connection_Collection import *
 
 def get_data(soup_div):
     data = {}
 
     try:
-        name = soup_div.find('span', {
-                             'class': 'feed-shared-actor__name t-14 t-black t-bold hoverable-link-text'}).text
+        name = soup_div.find('span', {'class': 'feed-shared-actor__name t-14 t-black t-bold hoverable-link-text'}).text
+                             
         if name:
             data["name"] = name.replace("\n", "")
     except:
@@ -18,8 +22,8 @@ def get_data(soup_div):
         #print("can't get the name")
 
     try:
-        work = soup_div.find('span', {
-                             'class': 'feed-shared-actor__description t-12 t-black--light t-normal'}).text
+        work = soup_div.find('span', {'class': 'feed-shared-actor__description t-12 t-black--light t-normal'}).text
+                             
         if work:
             data["work"] = work.replace("\n", "")
     except:
@@ -27,8 +31,8 @@ def get_data(soup_div):
         #print("can't get the work infos")
 
     try:
-        image_link = soup_div.find('img', {
-                                   'class': 'ivm-view-attr__img--centered EntityPhoto-circle-3 feed-shared-actor__avatar-image presence-entity__image EntityPhoto-circle-3 lazy-image loaded ember-view'})['src']
+        image_link = soup_div.find('img', {'class': 'ivm-view-attr__img--centered EntityPhoto-circle-3 feed-shared-actor__avatar-image presence-entity__image EntityPhoto-circle-3 lazy-image loaded ember-view'})['src']
+
         if image_link:
             data["image"] = image_link
     except:
@@ -36,8 +40,8 @@ def get_data(soup_div):
         #print("can't get the image link")
 
     try:
-        text = soup_div.find('div', {
-                             'class': 'feed-shared-text__text-view feed-shared-text-view white-space-pre-wrap break-words ember-view'}).text
+        text = soup_div.find('div', {'class': 'feed-shared-text__text-view feed-shared-text-view white-space-pre-wrap break-words ember-view'}).text
+                             
         if text:
             data["description"] = text.replace("\n", "")
     except:
@@ -93,9 +97,9 @@ def Filtre(Extracted):
             "Maitrise": 1,
             "join": 1,
             "offre": 1,
-            "carrer" 1,
+            "carrer" :1,
             "carrière": 1,
-            "#carrer" 1,
+            "#carrer" :1,
             "Techniciens": 1,
             "profils": 1,
             "project manager": 1,
@@ -122,11 +126,18 @@ def Filtre(Extracted):
             Filtered.append(Ex)
     return Filtered
 
+
+
 def email(Filtered):
+    NewFiltered = []
+    post = []
     for F in Filtered:
         for f in F.keys():
             if "email" == f:
-                print("_________")
-                print(F)
-                print("####################")
-    
+                NewFiltered.append(F)
+    return NewFiltered
+
+
+
+
+

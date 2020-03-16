@@ -1,2 +1,2 @@
-Exemple@exemple.com
-Pasword
+exemple@exemple.com
+password
