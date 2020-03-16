@@ -91,6 +91,23 @@ def Filtre(Extracted):
             "Nous recherchons": 1,
             "Nous offrons": 1,
             "Maitrise": 1,
+            "join": 1,
+            "offre": 1,
+            "carrer" 1,
+            "carrière": 1,
+            "#carrer" 1,
+            "Techniciens": 1,
+            "profils": 1,
+            "project manager": 1,
+            "business development": 1,
+            "poste": 1,
+            "mission": 1,
+            "chargé de mission": 1,
+            "chef d'équipe": 1,
+            "expérience": 1,
+            "stage": 1,
+            "Entretien": 1,
+            "candidatures": 1,
 
             }
 
