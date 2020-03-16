@@ -3,10 +3,6 @@ import requests
 import time
 import random
 import os
-
-import json
-import pandas as pd
-
 from Connection_Collection import *
 
 def get_data(soup_div):
