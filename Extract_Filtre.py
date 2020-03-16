@@ -75,9 +75,23 @@ def Filtre(Extracted):
             "recrutons": 1,
             "CDI": 1,
             "Envoyez votre cv": 1,
+            "Envoyez cv": 1,
+            "lettre de motivation": 1,
             "WANTED": 1,
             "Contrat": 1,
-            "#Emploi": 1
+            "#Emploi": 1,
+            "recherche": 1,
+            "Développeur": 1,
+            "Ingénieur": 1,
+            "Engineer": 1,
+            "Looking for": 1,
+            "recrutement": 1,
+            "POSTE PROPOSÉ": 1,
+            "PROFIL RECHERCHÉ ": 1,
+            "Nous recherchons": 1,
+            "Nous offrons": 1,
+            "Maitrise": 1,
+
             }
 
     Filtered = []
