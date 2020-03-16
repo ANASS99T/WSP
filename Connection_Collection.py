@@ -20,15 +20,20 @@ def connection(link):
             print("config.txt is not define")
         except IndexError:
             print("username or password is not found")
+    try :
+        elementID = browser.find_element_by_id('username')
+        elementID.send_keys(username)
+    
+        elementID = browser.find_element_by_id('password')
+        elementID.send_keys(password)
+    
+        elementID.submit()
+        if browser.current_url=='https://www.linkedin.com/checkpoint/lg/login-submit' :
+            print("check submission")
         
-    elementID = browser.find_element_by_id('username')
-    elementID.send_keys(username)
-
-    elementID = browser.find_element_by_id('password')
-    elementID.send_keys(password)
-
-    elementID.submit()
-    return browser
+    finally :
+        return browser
+        
 
 def collection(browser):
 
