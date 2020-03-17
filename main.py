@@ -26,9 +26,9 @@ def main():
     print()
     to_table(NewFiltered)
 
-    #generate txt file
-    generate_data(NewFiltered, "data.txt")
-    print("data are saved in .\\WSP\\data.txt")
+    #generate csv file
+    generate_data(NewFiltered, "data.csv")
+    print("data are saved in .\\WSP\\data.csv")
 
 
 

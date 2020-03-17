@@ -11,11 +11,10 @@ def to_table(new_data):
 
 
 def generate_data(new_data, file):
-    f = open(file, "w+")
 
     for i in range(len(new_data)):
-        df = pd.DataFrame(data=new_data[i], index=[i])
-        df = (df.T)
-        f.write(df.to_string(header=False, index=False))
-        f.write("\n\n\n")
-    f.close()
+        df = pd.DataFrame(new_data, columns=['name','work','image','description','label'])
+        print(df)
+
+    #df.to_csv(file)
+
