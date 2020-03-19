@@ -1,8 +1,3 @@
-import re
-import requests
-import time
-import random
-import os
 from Connection_Collection import *
 
 def get_data(soup_div):
@@ -126,7 +121,6 @@ def Filtre(Extracted):
 
 def email(Filtered):
     NewFiltered = []
-    post = []
     for F in Filtered:
         for f in F.keys():
             if "email" == f:
